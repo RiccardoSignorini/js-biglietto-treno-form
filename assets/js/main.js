@@ -1,6 +1,9 @@
 /* 
 !!!PROBLEMA!!!
--CHIEDERE KM DA PERCORRERE ED ETA' ALL'UTENTE
+-CHIEDERE NOME E COGNOME
+-CHIEDERE DESTINAZIONE
+-CHIEDERE ETA'
+-CHIEDERE KM DA PERCORRERE
 -COSTO 0,21€ AL KM
 -SCONTO 20% UNDER 18
 -SCONTO 40% OVER 65
@@ -26,19 +29,24 @@ function makeTicket(){
     // SCONTO OVER 65
     let price2 = ((lunghezzaPercorso * (0.21))-(price/100*40));
     price2 = price2.toFixed(2);
+    // NUMERO CARROZZA
+    
+    // NUMERO BIGLIETTO
+
+
     // --LOGICA--
     document.querySelector(`#clientname`).innerHTML = `<h3>${firstLastName}</h3>`
 
-    document.querySelector(`#destinationTicket`).innerHTML = `<h3>${destination}</h3>`
+    document.querySelector(`#destination-ticket`).innerHTML = `<h3>${destination}</h3>`
     
     if (age<18) {
-        document.querySelector(`#price`).innerHTML = `<p>Price: ${price1}€</p>`;
+        document.querySelector(`#price`).innerHTML = `<p>Price with 20%: ${price1}€</p>`;
         document.querySelector(`#identity`).innerHTML = `<p>Underage</p>`;
     } else if (age>65) {
-        document.querySelector(`#price`).innerHTML = `<p>Price: ${price2}€</p>`;
-        document.querySelector(`#identity`).innerHTML = `<p>Of age</p>`;
-    } else {
-        document.querySelector(`#price`).innerHTML = `<p>Price: ${price}€</p>`;
+        document.querySelector(`#price`).innerHTML = `<p>Price with 40%: ${price2}€</p>`;
         document.querySelector(`#identity`).innerHTML = `<p>Of age, over 65</p>`;
+    } else {
+        document.querySelector(`#price`).innerHTML = `<p>Full price: ${price}€</p>`;
+        document.querySelector(`#identity`).innerHTML = `<p>Of age</p>`;
     }
 }

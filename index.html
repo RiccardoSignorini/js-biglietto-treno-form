@@ -9,12 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
+    <!-- INPUT UTENTE -->
     <div class="container text-center">
         <h1>Create your ticket</h1>
-        <!-- <input type="text" id="firstlastname" placeholder="First and Last name">
-        <input type="number" id="age" placeholder="Age" value="">
-        <input type="number" id="lunghezzapercorso" placeholder="km" value=""> -->
-
+        <!-- RIGA 1 -->
         <div class="row">
             <div class="col">
               <input type="text" class="form-control mb-3" placeholder="First and Last name" aria-label="First name" id="firstlastname">
@@ -23,6 +21,7 @@
               <input type="text" class="form-control mb-3" placeholder="Where are you going?" aria-label="destination" id="destination">
             </div>
         </div>
+        <!-- RIGA 2 -->
         <div class="row">
             <div class="col">
               <input type="number" class="form-control" placeholder="Age" aria-label="Age" id="age">
@@ -33,10 +32,13 @@
         </div>
         <button type="submit" class="btn btn-primary m-3" onclick="makeTicket()">Search</button>    
     </div>
+
+    <!-- BIGLIETTO -->
     <section class="container text-center">
-        <div class="bg-primary rounded p-3">
+        <div class="bg-primary border border-5 rounded-5 p-3">
             <h2 class="mb-4">Your ticket</h2>
             <div class="row space-between">
+                <!-- COLONNA 1 -->
                 <div class="text-start col-4 ps-5">
                     <div id="clientname">
                         <h3>Name Passenger</h3>
@@ -45,6 +47,7 @@
                         <p>Age</p>
                     </div>
                 </div>
+                <!-- COLONNA 2 -->
                 <div class="text-start col-4 ps-5">
                     <div id="destination-ticket">
                         <h3>Destination</h3>
@@ -53,17 +56,18 @@
                         <p>Price:</p>
                     </div>
                 </div> 
+                <!-- COLONNA 3 -->
                 <div class="text-start col-4 ps-5">
                     <div>
                         <h6>Carriage</h6>
                     </div>
-                    <div id="">
+                    <div id="carriage">
                         <p>X</p>
                     </div>
                     <div>
                         <h6>Ticket Number</h6>
                     </div>
-                    <div id="">
+                    <div id="ticket-number">
                         <p>XXXXX</p>
                     </div>
                 </div>   
