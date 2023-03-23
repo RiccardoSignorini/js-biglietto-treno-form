@@ -11,6 +11,8 @@
 function makeTicket(){
     // NOME E COGNOME
     let firstLastName = document.querySelector(`#firstlastname`).value;
+    // DESTINAZIONE
+    let destination = document.querySelector(`#destination`).value;
     // ETA'
     let age = document.querySelector(`#age`).value;
     // LUNGHEZZA PERCORSO
@@ -25,13 +27,18 @@ function makeTicket(){
     let price2 = ((lunghezzaPercorso * (0.21))-(price/100*40));
     price2 = price2.toFixed(2);
     // --LOGICA--
-    document.querySelector(`#clientname`).innerHTML = `<p>${firstLastName}</p>`
+    document.querySelector(`#clientname`).innerHTML = `<h3>${firstLastName}</h3>`
+
+    document.querySelector(`#destinationTicket`).innerHTML = `<h3>${destination}</h3>`
     
     if (age<18) {
-        document.querySelector(`#price`).innerHTML = `<p>${price1}</p>`;
+        document.querySelector(`#price`).innerHTML = `<p>Price: ${price1}€</p>`;
+        document.querySelector(`#identity`).innerHTML = `<p>Underage</p>`;
     } else if (age>65) {
-        document.querySelector(`#price`).innerHTML = `<p>${price2}</p>`;
+        document.querySelector(`#price`).innerHTML = `<p>Price: ${price2}€</p>`;
+        document.querySelector(`#identity`).innerHTML = `<p>Of age</p>`;
     } else {
-        document.querySelector(`#price`).innerHTML = `<p>${price}</p>`;
+        document.querySelector(`#price`).innerHTML = `<p>Price: ${price}€</p>`;
+        document.querySelector(`#identity`).innerHTML = `<p>Of age, over 65</p>`;
     }
 }
